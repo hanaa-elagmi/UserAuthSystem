@@ -1,8 +1,11 @@
 var Name =document.querySelector('.name');
 var Email=document.querySelector('.email');
 var logoutBtn=document.querySelector('.logoutBtn');
-let currentUser = JSON.parse(localStorage.getItem('currentUser')) ;
+let currentUser = JSON.parse(localStorage.getItem('currentUser'))||[] ;
+if(!currentUser){
+        window.location='login.html';
 
+}
 Name.innerHTML='Welcome '+ currentUser.Name;
 Email.innerHTML='Your Email is '+currentUser.Email;
 
